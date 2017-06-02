@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#212121"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+
+        <Button
+            android:id="@+id/btnSet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"
+            android:text="SET DATE AND TIME"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="360dp"
+        android:background="#eaf0f1"
+        android:elevation="8dp"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:layout_behavior="android.support.design.widget.BottomSheetBehavior">
+
+
+        <RelativeLayout
+            android:id="@+id/rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:background="@color/white">
+
+            <Button
+                android:id="@+id/cancel"
+                style="@style/Base.Widget.AppCompat.Button.Borderless"
+                android:layout_width="wrap_content"
+                android:layout_height="36dp"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                android:layout_alignParentLeft="true"
+                android:textColor="#1f2124" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/timeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#1f2124"
+                    android:background="@color/white" />
+
+                <TextView
+                    android:id="@+id/dateText"
+                    android:layout_width="wrap_content"
+                    android:textColor="#1f2124"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl"
+            android:padding="5dp"
+            android:scrollbars="none" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/recycler_view"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin">
+
+
+            <com.anupamchugh.smartdateandtimepicker.NumberPicker
+                android:id="@+id/npHours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_toLeftOf="@+id/collon"
+                app:np_dividerColor="@color/grey_500"
+                app:np_height="150"
+                app:np_textColor="@color/red"
+                app:np_textSize="18sp"
+                app:np_width="64" />
+
+
+            <TextView
+                android:id="@+id/collon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@+id/npMinutes"
+                android:text=":"
+                android:textColor="@color/red"
+                android:textSize="18sp" />
+
+
+            <com.anupamchugh.smartdateandtimepicker.NumberPicker
+                android:id="@+id/npMinutes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_vertical"
+                app:np_dividerColor="@color/grey_500"
+                app:np_height="150"
+                app:np_textColor="@color/red"
+                app:np_textSize="18sp"
+                app:np_width="64" />
+
+            <com.anupamchugh.smartdateandtimepicker.NumberPicker
+                android:id="@+id/npMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_toRightOf="@+id/npMinutes"
+                app:np_dividerColor="@color/grey_500"
+                app:np_height="150"
+                app:np_textColor="@color/red"
+                app:np_textSize="18sp"
+                app:np_width="60" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
